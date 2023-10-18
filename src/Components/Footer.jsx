@@ -1,58 +1,64 @@
+import { Link } from "react-router-dom";
 
 
 const Footer = () => {
     return (
         <div>
             <footer className="bg-gray-200">
-                <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+                <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
                     <div className="flex justify-center text-teal-600">
-                    
+                    <div className="flex items-center"> 
+                    <img className="w-8 md:w-10" src="https://i.ibb.co/tH0GWV4/carguru-prev-ui.png" alt="" />
+                    <a className=" cursor-pointer  normal-case  md:text-xl text-[#46D993] md:text-red-400 font-bold  ml-1 ">Car<span className="md:text-[#46D993] text-red-400 ">gurus</span></a>
+                   
                     </div>
+                     </div>
 
-                    <p className="mx-auto mt-6 max-w-md text-center leading-relaxed text-gray-500">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Incidunt
-                    consequuntur amet culpa cum itaque neque.
+                    <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500">
+                    THE EASIEST WAY TO BUY YOUR NEXT CAR
                     </p>
 
-                    <ul className="mt-12 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
+                    <ul className="mt-8 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
                     <li>
-                        <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
-                        About
+                        <Link to={'/'}>
+                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        Home
                         </a>
+                        </Link>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
                         Careers
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
                         History
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
                         Services
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
-                        Projects
+                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        About
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-gray-700/75" href="/">
-                        Blog
+                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                         Contact Us
                         </a>
                     </li>
                     </ul>
 
-                    <ul className="mt-12 flex justify-center gap-6 md:gap-8">
+                    <ul className="mt-8 flex justify-center gap-6 md:gap-8">
                     <li>
                         <a
                         href="/"
