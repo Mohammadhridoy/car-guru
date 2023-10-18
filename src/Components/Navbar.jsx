@@ -8,7 +8,7 @@ const Navbar = () => {
 
             <div className="  mx-auto z-10 bg-white   lg:py-2 md:sticky top-0 shadow-sm ">
 
-            <div className="navbar lg:px-12 ">
+            <div className="navbar px-4 lg:px-12 ">
                 <div className="navbar-start ">
                     <div className="dropdown">
                         {/* Nav icon link  */}
@@ -29,7 +29,7 @@ const Navbar = () => {
                                     <NavLink
                                             to="/addproduct"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-red-400" : ""}>
+                                                isPending ? "pending" : isActive ? "active" : ""}>
                                                 Add Product
                                         </NavLink>
                                     </li>
@@ -39,7 +39,7 @@ const Navbar = () => {
                                     <NavLink
                                             to="/cart"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-red-400" : ""}>
+                                                isPending ? "pending" : isActive ? "active" : ""}>
                                                 
                                                 Cart  
                                         </NavLink>
@@ -66,7 +66,7 @@ const Navbar = () => {
                         <li className="px-3 font-semibold text-[16px] text-black"><NavLink
                             to="/" 
                             className={({ isActive, isPending }) =>
-                                isPending ? "pending" : isActive ? "text-red-400" : "" } >
+                                isPending ? "pending" : isActive ? "active " : "" } >
                                     Home
                         </NavLink></li>
                         
@@ -75,7 +75,7 @@ const Navbar = () => {
                                     <NavLink
                                             to="/addproduct"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-red-400" : ""}>
+                                                isPending ? "pending" : isActive ? "active" : ""}>
                                                 Add Product
                                         </NavLink>
                                     </li>
@@ -84,7 +84,7 @@ const Navbar = () => {
                                     <NavLink
                                             to="/cart"
                                             className={({ isActive, isPending }) =>
-                                                isPending ? "pending" : isActive ? "text-red-400" : ""}>
+                                                isPending ? "pending" : isActive ? "active" : ""}>
                                                 Cart  
                                         </NavLink>
                                     </li>   
@@ -109,7 +109,7 @@ const Navbar = () => {
                 </div> */}
                   <div className="">
                     <Link to={"/login"} >
-                    <button className="btn px-2 md:px-4 bg-[#ee626b] border-none text-white hover:bg-[#46D993] md:shadow-md text-xs lg:text-[16px] ">Login/SIGN UP</button>
+                    <button className="btn px-5 md:px-5 bg-[#ee626b] border-none text-white hover:bg-[#46D993] md:shadow-md text-xs lg:text-[16px] ">Login</button>
                     </Link>
                 </div>  
                     
