@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "image": "https://i.ibb.co/dLBtj5d/toyota-001.png",
+      "brand": "Toyota"
+    },
+    {
+      "id": 2,
+      "image": "https://i.ibb.co/4WxzCZH/Logo-Tata-Motors.jpg",
+      "brand": "TATA "
+    },
+    {
+      "id": 3,
+      "image": "https://i.ibb.co/MS2vMpY/3-tesla-logo-ronald-silva.jpg",
+      "brand": "Tesla"
+    },
+    {
+      "id": 4,
+      "image": "https://i.ibb.co/Z24rYZz/Mazda-Logo.png",
+      "brand": "Mazda"
+    },
+    {
+      "id": 5,
+      "image": "https://i.ibb.co/Wy1Rqff/download.png",
+      "brand": "Kia"
+    },
+    {
+      "id": 6,
+      "image": "https://i.ibb.co/rx5bNrg/download-m.jpg",
+      "brand": "Mercedes-Benz"
+    }
+  ]
+  
