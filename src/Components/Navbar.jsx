@@ -1,8 +1,17 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Pages/AuthProvider";
 // import { BsCartCheck } from "react-icons/bs";
 
 
 const Navbar = () => {
+
+    const {user, logOut} =useContext(AuthContext)
+
+    const handlelogOut =() =>{
+        logOut()
+    }
+
     return (
         <div>
 
@@ -96,22 +105,22 @@ const Navbar = () => {
 
                 {/* md and lg device button */}
                 <div className="navbar-end">
-                    
-                         {/* <div className="flex">
-                        <div className=" mr-3 flex items-center gap-3 text-[16px] text-white font-semibold">
+                  {  
+                      user ?   <div className="flex">
+                        <div className=" mr-3 flex items-center gap-3 text-[16px] text-black font-semibold">
                             <h6>{user.displayName}</h6>
-                            <div className="border-white border-2 rounded-full"> 
+                            <div className="border-black border-2 rounded-full"> 
                                 <img className="w-12  rounded-full" src={user.photoURL} alt="photo" />
                             </div>
                             
                         </div>
-                        <button onClick={handleSignOut} className="btn px-4 bg-[#ee626b] border-none text-white hover:bg-[#007aff] shadow-md ">Sign Out</button>
-                </div> */}
-                  <div className="">
+                        <button onClick={handlelogOut} className="btn px-4 bg-[#ee626b] border-none text-white hover:bg-[#46d993] shadow-md ">Sign Out</button>
+                </div>
+                 : <div className="">
                     <Link to={"/login"} >
                     <button className="btn px-5 md:px-5 bg-[#ee626b] border-none text-white hover:bg-[#46D993] md:shadow-md text-xs lg:text-[16px] ">Login</button>
                     </Link>
-                </div>  
+                </div>  }
                     
                     
                 

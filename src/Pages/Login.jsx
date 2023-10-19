@@ -23,7 +23,7 @@ const Login = () => {
     
     
 
-    const {singInUser,  googelSingin } = useContext(AuthContext)
+    const {singInUser,  googelSingin, githublogin } = useContext(AuthContext)
     // const navigate = useNavigate()
 
     const handlerLogin = (e) =>{
@@ -55,6 +55,11 @@ const Login = () => {
         googelSingin()
       
       
+    }
+
+    const handlegithub = () =>{
+        githublogin()
+
     }
 
 
@@ -147,7 +152,7 @@ const Login = () => {
 
                         <div  className="">
                             <button onClick={handlegoogle} className="btn mb-3 btn-outline w-full hover:bg-[#ee626b]"> <AiOutlineGoogle></AiOutlineGoogle>Login with Google</button>
-                            <button className="btn btn-outline w-full hover:bg-[#ee626b]">  <DiGithubBadge></DiGithubBadge>Login with Github</button>
+                            <button onClick={handlegithub} className="btn btn-outline w-full hover:bg-[#ee626b]">  <DiGithubBadge></DiGithubBadge>Login with Github</button>
                          </div>
 
                         <p className="text-center text-xl text-white">
