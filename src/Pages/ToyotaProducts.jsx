@@ -59,11 +59,15 @@ const ToyotaProducts = () => {
                     </Link>
 
 
-                    <button
-                        className="inline-block shrink-0 rounded-md lg:w-[40%]  bg-red-400 px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-red-500 hover:border-none focus:outline-none focus:ring active:text-blue-500"
+                    <Link to={`/updateinfo/${product._id}`}> 
+                    <button 
+                        className="inline-block shrink-0 rounded-md lg:w-[100%]  bg-red-400 px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-red-500 hover:border-none focus:outline-none focus:ring active:text-blue-500"
                         >
                         Update 
                     </button>
+                    </Link>
+
+
                     </div>
 
                  

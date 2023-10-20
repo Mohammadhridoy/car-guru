@@ -40,11 +40,11 @@ const BrandCards = () => {
     }
 
     return (
-        <div className="px-4 md:px-12 py-4  md:py-12">
-            <div>
-                <h1 className="text-black font-bold md:text-3xl  ">Brand Category</h1>
+        <div className="px-4 md:px-12 py-4  md:py-12 dark:bg-black">
+            <div >
+                <h1 className="text-black dark:text-white font-bold md:text-3xl  ">Brand Category</h1>
                 <p className="text-gray-400 mt-2 md:text-xl">To get the most accurate and up-to-date information.</p>
-                <div className="grid md:grid-cols-6 md:py-5">
+                <div className="grid grid-cols-2 md:grid-cols-6 md:py-5">
                     {
                         brands.map(brand => <div key={brand.id} >
                             

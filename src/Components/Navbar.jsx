@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Pages/AuthProvider";
 // import { BsCartCheck } from "react-icons/bs";
@@ -7,6 +7,18 @@ import { AuthContext } from "../Pages/AuthProvider";
 const Navbar = () => {
 
     const {user, logOut} =useContext(AuthContext)
+
+    const [darkMode, setDarkMode] = useState(false)
+
+    useEffect(()=>{
+        if(darkMode){
+            document.documentElement.classList.add("dark")
+        }else{
+            document.documentElement.classList.remove("dark")
+        }
+    },[darkMode])
+
+
 
  
 
@@ -17,7 +29,7 @@ const Navbar = () => {
     return (
         <div>
 
-            <div className="  mx-auto z-10 bg-white   lg:py-2 md:sticky top-0 shadow-sm ">
+            <div className="  mx-auto z-10 bg-white dark:bg-black   lg:py-2 md:sticky top-0 shadow-sm ">
 
             <div className="navbar px-4 lg:px-12 ">
                 <div className="navbar-start ">
@@ -28,7 +40,7 @@ const Navbar = () => {
                     </label>
                     {/* small device dropdown manu  */}
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box  w-52">
-                    <li className="px-3 font-semibold text-3xl text-black"> <NavLink
+                    <li className="px-3 font-semibold text-3xl text-black dark:bg-white"> <NavLink
                             to="/"
                             className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "active" : ""}>
@@ -36,7 +48,7 @@ const Navbar = () => {
                         </NavLink></li>
                         
                           <div>
-                                    <li  className="px-3 font-semibold text-[16px]  text-black">
+                                    <li  className="px-3 font-semibold text-[16px]  text-black dark:bg-white">
                                     <NavLink
                                             to="/addproduct"
                                             className={({ isActive, isPending }) =>
@@ -45,7 +57,7 @@ const Navbar = () => {
                                         </NavLink>
                                     </li>
                 
-                                    <li  className="px-3 font-semibold text-[16px] text-black">
+                                    <li  className="px-3 font-semibold text-[16px] text-black dark:bg-white">
       
                                     <NavLink
                                             to="/cart"
@@ -74,7 +86,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-2">
 
-                        <li className="px-3 font-semibold text-[16px] text-black"><NavLink
+                        <li className="px-3 font-semibold text-[16px] text-black dark:text-white"><NavLink
                             to="/" 
                             className={({ isActive, isPending }) =>
                                 isPending ? "pending" : isActive ? "active " : "" } >
@@ -82,7 +94,7 @@ const Navbar = () => {
                         </NavLink></li>
                         
                             <div className="flex">
-                                    <li  className="px-3 font-semibold text-[16px] text-black">
+                                    <li  className="px-3 font-semibold text-[16px] text-black dark:text-white">
                                     <NavLink
                                             to="/addproduct"
                                             className={({ isActive, isPending }) =>
@@ -91,7 +103,7 @@ const Navbar = () => {
                                         </NavLink>
                                     </li>
                 
-                                    <li  className="px-3 font-semibold text-[16px] text-black">
+                                    <li  className="px-3 font-semibold text-[16px] text-black dark:text-white">
                                     <NavLink
                                             to="/cart"
                                             className={({ isActive, isPending }) =>
@@ -109,20 +121,25 @@ const Navbar = () => {
                 <div className="navbar-end">
                   {  
                       user ?   <div className="flex">
-                        <div className=" mr-3 flex items-center gap-3 text-[16px] text-black font-semibold">
-                            <h6>{user.displayName}</h6>
+                        <div className=" mr-3 flex items-center gap-3 text-[16px] text-black  font-semibold">
+                            <h6 className="dark:text-white">{user.displayName}</h6>
                             <div className="border-black border-2 rounded-full"> 
-                                <img className="w-12  rounded-full" src={user.photoURL} alt="photo" />
+                                <img className="w-6 md:w-12  rounded-full" src={user.photoURL} alt="photo" />
                             </div>
                             
                         </div>
-                        <button onClick={handlelogOut} className="btn px-4 bg-[#ee626b] border-none text-white hover:bg-[#46d993] shadow-md ">Sign Out</button>
+                        <button onClick={handlelogOut} className="btn px-2 lg:px-4 bg-[#ee626b] border-none text-white hover:bg-[#46d993] shadow-md ">Sign Out</button>
                 </div>
                  : <div className="">
                     <Link to={"/login"} >
                     <button className="btn px-5 md:px-5 bg-[#ee626b] border-none text-white hover:bg-[#46D993] md:shadow-md text-xs lg:text-[16px] ">Login</button>
                     </Link>
                 </div>  }
+
+
+                <button onClick={()=>{
+                    setDarkMode(!darkMode)
+                }} className=" py-2 md:py-4 ml-3 px-2 md:px-6 bg-black dark:bg-white border-none text-white dark:text-black  md:shadow-md text-xs lg:text-[16px] rounded-md ">{darkMode?"Light":"Dark"}</button> 
                     
                     
                 

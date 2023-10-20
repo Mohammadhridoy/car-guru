@@ -3,7 +3,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiOutlineGoogle  } from 'react-icons/ai';
 import { DiGithubBadge  } from 'react-icons/di';
 import { useContext } from "react";
-// import { AuthContext } from "../AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import  { AuthContext } from "./AuthProvider";
@@ -19,12 +18,12 @@ import  { AuthContext } from "./AuthProvider";
 
 const Login = () => {
 
-    // const location = useLocation()
+    const location = useLocation()
     
     
 
     const {singInUser,  googelSingin, githublogin } = useContext(AuthContext)
-    // const navigate = useNavigate()
+    const navigate = useNavigate()
 
     const handlerLogin = (e) =>{
         e.preventDefault()
@@ -38,7 +37,7 @@ const Login = () => {
             console.log(result.user)
             
 
-            // navigate(location?.state ? location.state : "/")
+            navigate(location?.state ? location.state : "/")
 
           
         })

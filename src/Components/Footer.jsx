@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Footer = () => {
     return (
         <div>
-            <footer className="bg-gray-200">
+            <footer className="bg-gray-200 dark:bg-black">
                 <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
                     <div className="flex justify-center text-teal-600">
                     <div className="flex items-center"> 
@@ -14,45 +14,45 @@ const Footer = () => {
                     </div>
                      </div>
 
-                    <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500">
+                    <p className="mx-auto mt-4 max-w-md text-center leading-relaxed text-gray-500 dark:text-white">
                     THE EASIEST WAY TO BUY YOUR NEXT CAR
                     </p>
 
                     <ul className="mt-8 flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12">
                     <li>
                         <Link to={'/'}>
-                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993] dark:text-white" href="/">
                         Home
                         </a>
                         </Link>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993] dark:text-white" href="/">
                         Careers
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993] dark:text-white" href="/">
                         History
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993] dark:text-white" href="/">
                         Services
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993] dark:text-white" href="/">
                         About
                         </a>
                     </li>
 
                     <li>
-                        <a className="text-gray-700 transition hover:text-[#46D993]" href="/">
+                        <a className="text-gray-700 transition hover:text-[#46D993] dark:text-white" href="/">
                          Contact Us
                         </a>
                     </li>
@@ -64,7 +64,7 @@ const Footer = () => {
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-gray-700 transition hover:text-gray-700/75"
+                        className="text-gray-700 dark:text-white transition hover:text-gray-700/75"
                         >
                         <span className="sr-only">Facebook</span>
                         <svg
@@ -87,7 +87,7 @@ const Footer = () => {
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-gray-700 transition hover:text-gray-700/75"
+                        className="text-gray-700 dark:text-white transition hover:text-gray-700/75"
                         >
                         <span className="sr-only">Instagram</span>
                         <svg
@@ -110,7 +110,7 @@ const Footer = () => {
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-gray-700 transition hover:text-gray-700/75"
+                        className="text-gray-700 dark:text-white transition hover:text-gray-700/75"
                         >
                         <span className="sr-only">Twitter</span>
                         <svg
@@ -131,7 +131,7 @@ const Footer = () => {
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-gray-700 transition hover:text-gray-700/75"
+                        className="text-gray-700 dark:text-white transition hover:text-gray-700/75"
                         >
                         <span className="sr-only">GitHub</span>
                         <svg
@@ -154,7 +154,7 @@ const Footer = () => {
                         href="/"
                         rel="noreferrer"
                         target="_blank"
-                        className="text-gray-700 transition hover:text-gray-700/75"
+                        className="text-gray-700 dark:text-white transition hover:text-gray-700/75"
                         >
                         <span className="sr-only">Dribbble</span>
                         <svg

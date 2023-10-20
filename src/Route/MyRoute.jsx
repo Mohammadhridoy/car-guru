@@ -13,6 +13,8 @@ import KiaProducts from "../Pages/KiaProducts";
 import BenzProducts from "../Pages/BenzProducts";
 import ProductsDetails from "../Pages/ProductsDetails";
 import UpdateProducts from "../Pages/UpdateProducts";
+import PrivateRoute from "../Pages/PrivateRoute";
+// import PrivateRoute2 from "../Pages/PrivateRoute2";
 
 
 
@@ -36,11 +38,11 @@ const MyRoute = createBrowserRouter([
             },
             {
                 path:"/addproduct",
-                element: <Addproduct></Addproduct>
+                element: <PrivateRoute><Addproduct></Addproduct></PrivateRoute>  
             },
             {
                 path:"/cart",
-                element: <MyCart></MyCart>,
+                element: <PrivateRoute>  <MyCart></MyCart> </PrivateRoute> ,
                 loader:() =>fetch("http://localhost:5000/cart")
             },
             {
@@ -76,12 +78,12 @@ const MyRoute = createBrowserRouter([
             },
             {
                 path:"/productsdetails/:id",
-                element: <ProductsDetails></ProductsDetails>,
+                element: <PrivateRoute> <ProductsDetails></ProductsDetails> </PrivateRoute>,
                 loader:({params}) =>fetch(`http://localhost:5000/products/${params.id}`)
             },
             {
                 path:"/updateinfo/:id",
-                element: <UpdateProducts></UpdateProducts>,
+                element: <PrivateRoute> <UpdateProducts> </UpdateProducts>    </PrivateRoute>  ,
                 loader:({params}) =>fetch(`http://localhost:5000/products/${params.id}`)
             }
 

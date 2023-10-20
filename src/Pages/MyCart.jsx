@@ -1,13 +1,55 @@
 
+import { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 
 
 const MyCart = () => {
     const loadedCart = useLoaderData()
     console.log(loadedCart)
+    const [loadedCarts, setloadedCarts] = useState(loadedCart)
+
+
 
 const handleDelete =(id) =>{
+
     console.log(id)
+
+
+    
+    Swal.fire({
+        title: 'Are you sure?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+
+        if (result.isConfirmed) {
+        fetch(`http://localhost:5000/cart/${id}`,{
+            method:"DELETE"
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data.deletedCount>0){
+                Swal.fire({
+                    title: 'Success!',
+                    text: ' Deleted successfully ',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                  })
+                  const remainingCart = loadedCarts.filter(cart => cart._id !=id)
+                  setloadedCarts(remainingCart)
+            }
+    
+        })
+
+
+        }
+      })
 }
 
 
@@ -19,10 +61,10 @@ const handleDelete =(id) =>{
         <div>
             
           {
-            loadedCart.length == 0? "No product add to card"
+            loadedCarts.length == 0? <h2 className="py-5 md:py-12 text-center font-bold">No product add to card</h2>
             :
-             <section>
-            <div className="mx-auto  px-8 py-8 sm:px-6 sm:py-12 lg:px-8">
+             <section >
+            <div className="  max-w-screen-xl mx-auto px-8 py-8 sm:px-6 sm:py-12 lg:px-8">
                 <div className="mx-auto max-w-3xl">
                 <header className="text-center">
                     <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">Your Cart</h1>
@@ -39,7 +81,7 @@ const handleDelete =(id) =>{
                     <ul className="space-y-4">
                
                     {
-                        loadedCart.map((cart, index) => 
+                        loadedCarts.map((cart, index) => 
                       
                         <li key={index} className="flex items-center gap-4">
                         {/* product images  */}
