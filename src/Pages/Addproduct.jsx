@@ -1,4 +1,5 @@
 // import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 const Addproduct = () => {
@@ -18,6 +19,27 @@ const Addproduct = () => {
 
         const products = {brand, type, name, image, price, description, rating}
         console.log(products)
+
+        fetch('http://localhost:5000/products', {
+            method:"POST",
+            headers:{
+              'content-type':'application/json'
+            },
+            body: JSON.stringify(products)
+          })
+          .then(res=>res.json())
+          .then(data => {
+            console.log(data)
+            if(data.insertedId){
+                Swal.fire({
+                    title: 'Success!',
+                    text: ' product Added successfully ',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                  })
+              form.reset()
+            }
+          })
     }
 
 

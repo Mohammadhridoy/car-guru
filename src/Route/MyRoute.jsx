@@ -5,6 +5,14 @@ import Login from "../Pages/Login";
 import Singup from "../Pages/Singup";
 import Addproduct from "../Pages/Addproduct";
 import MyCart from "../Pages/MyCart";
+import ToyotaProducts from "../Pages/ToyotaProducts";
+import TeslaProducts from "../Pages/TeslaProducts";
+import TataProducts from "../Pages/TataProducts";
+import MazdaProducts from "../Pages/MazdaProducts";
+import KiaProducts from "../Pages/KiaProducts";
+import BenzProducts from "../Pages/BenzProducts";
+
+
 
 
 const MyRoute = createBrowserRouter([
@@ -29,8 +37,39 @@ const MyRoute = createBrowserRouter([
                 element: <Addproduct></Addproduct>
             },
             {
-                path:"cart",
+                path:"/cart",
                 element: <MyCart></MyCart>
+            },
+            {
+                path:"/toyotaproducts",
+                element: <ToyotaProducts></ToyotaProducts>,
+                loader: ()=> fetch('http://localhost:5000/products')
+            },
+            
+            {
+                path:"/teslaproducts",
+                element: <TeslaProducts></TeslaProducts>,
+                loader: ()=> fetch('http://localhost:5000/products')
+            },
+            {
+                path:"/tataproducts",
+                element: <TataProducts></TataProducts>,
+                loader:() => fetch('http://localhost:5000/products')
+            },
+            {
+                path:"/mazdaproducts",
+                element: <MazdaProducts></MazdaProducts>,
+                loader:() => fetch('http://localhost:5000/products')
+            },
+            {
+                path:"/kiaproducts",
+                element: <KiaProducts></KiaProducts>,
+                loader:() => fetch('http://localhost:5000/products')
+            },
+            {
+                path:"/benzproducts",
+                element: <BenzProducts></BenzProducts>,
+                loader:() => fetch('http://localhost:5000/products')
             }
         ]
     }

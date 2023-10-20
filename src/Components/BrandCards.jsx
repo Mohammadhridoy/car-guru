@@ -1,16 +1,43 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 const BrandCards = () => {
 
     const [brands, setbrands]=useState([])
 
+    const navigate = useNavigate()
+
     useEffect(()=>{
         fetch('brand.json')
         .then(res => res.json())
         .then(data => setbrands(data))
     },[])
+
+  
+
+    const handlebrand = (name) =>{
+
+
+        if(name == "Toyota"){
+            navigate('/toyotaproducts')
+        }
+        else if(name == "Tesla"){
+            navigate('/teslaproducts')
+        }
+        else if(name == "Mazda"){
+            navigate('/mazdaproducts')
+        }
+        else if(name == "Kia"){
+            navigate('/kiaproducts')
+        }
+        else if(name == "Mercedes-Benz"){
+            navigate('/benzproducts')
+        }
+        else{
+            navigate('/tataproducts')
+        }
+    }
 
     return (
         <div className="px-4 md:px-12 py-4  md:py-12">
@@ -22,7 +49,7 @@ const BrandCards = () => {
                         brands.map(brand => <div key={brand.id} >
                             
 
-                            <div className="relative flex flex-col mt-6 text-gray-700 bg-white  border hover:border-[#46d993] shadow-md w-48 h-48 rounded-xl bg-clip-border cursor-pointer">
+                            <div onClick={()=>handlebrand(brand.brand)} className="relative flex flex-col mt-6 text-gray-700 bg-white  border hover:border-[#46d993] shadow-md w-48 h-48 rounded-xl bg-clip-border cursor-pointer">
                                 
                                     <div className="pl-5 pt-5 mt-3">
                                     <img className="w-8 mb-3" src={brand.image} alt="" />
