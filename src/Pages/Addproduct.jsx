@@ -15,7 +15,7 @@ const Addproduct = () => {
         const price = form.price.value
         const description = form.description.value
         const rating  = form.rating.value
-        console.log( brand, type, name, image, price, description, rating)
+        
 
         const products = {brand, type, name, image, price, description, rating}
         console.log(products)

@@ -7,6 +7,7 @@ const UpdateProducts = () => {
     const {_id} = loadUpdateinfo
     console.log(_id)
 
+
     const handleUpdate  =  e =>{
         e.preventDefault()
         const form = e.target
@@ -18,29 +19,29 @@ const UpdateProducts = () => {
         const price = form.price.value
         const description = form.description.value
         const rating  = form.rating.value
-        console.log( brand, type, name, image, price, description, rating)
+        
 
-        const updateProducts = {brand, type, name, image, price, description, rating}
-        console.log(updateProducts)
+        const updatedProducts = {brand, type, name, image, price, description, rating}
+        console.log(updatedProducts)
 
-        fetch(`http://localhost:5000/products${_id}`, {
+        fetch(`http://localhost:5000/products/${_id}`, {
             method:"PUT",
             headers:{
               'content-type':'application/json'
             },
-            body: JSON.stringify(updateProducts)
+            body: JSON.stringify(updatedProducts)
           })
-          .then(res=>res.json())
+          .then(res => res.json())
           .then(data => {
             console.log(data)
-            if(data.insertedId){
+            if(data.modifiedCount>0){
                 Swal.fire({
                     title: 'Success!',
                     text: ' product update successfully ',
                     icon: 'success',
                     confirmButtonText: 'OK'
                   })
-              form.reset()
+            //   form.reset()
             }
           })
     }
