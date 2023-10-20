@@ -11,6 +11,8 @@ import TataProducts from "../Pages/TataProducts";
 import MazdaProducts from "../Pages/MazdaProducts";
 import KiaProducts from "../Pages/KiaProducts";
 import BenzProducts from "../Pages/BenzProducts";
+import ProductsDetails from "../Pages/ProductsDetails";
+import UpdateProducts from "../Pages/UpdateProducts";
 
 
 
@@ -70,7 +72,18 @@ const MyRoute = createBrowserRouter([
                 path:"/benzproducts",
                 element: <BenzProducts></BenzProducts>,
                 loader:() => fetch('http://localhost:5000/products')
+            },
+            {
+                path:"/productsdetails/:id",
+                element: <ProductsDetails></ProductsDetails>,
+                loader:({params}) =>fetch(`http://localhost:5000/products/${params.id}`)
+            },
+            {
+                path:"/updateinfo/:id",
+                element: <UpdateProducts></UpdateProducts>,
+                loader:({params}) =>fetch(`http://localhost:5000/products/${params.id}`)
             }
+
         ]
     }
 ])

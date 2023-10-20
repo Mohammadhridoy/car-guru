@@ -1,13 +1,16 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 
 const TataProducts = () => {
 
     const loadedProducts = useLoaderData()
 
-    const filterProducts = loadedProducts.filter(products => products.brand == "TATA" )
-    console.log(filterProducts)
 
+
+    const filterProducts = loadedProducts.filter(products => products.brand == "TATA" )
+
+
+  
 
 
     return (
@@ -50,17 +53,21 @@ const TataProducts = () => {
                         <h5 className="font-medium">Rating: {product.rating}</h5>
                     </div>
                     <div className="flex justify-between pt-3">
-                    <button
-                        className="inline-block shrink-0 rounded-md lg:w-[40%]  bg-[#46D993] px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-red-500 hover:border-none focus:outline-none focus:ring active:text-blue-500"
+                        <Link to={`/productsdetails/${product._id}`}>
+                    <button 
+                        className="inline-block shrink-0 rounded-md lg:w-[100%]  bg-[#46D993] px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-red-500 hover:border-none focus:outline-none focus:ring active:text-blue-500"
                         >
                         Details 
                     </button>
+                    </Link>
 
-                    <button
-                        className="inline-block shrink-0 rounded-md lg:w-[40%]  bg-red-400 px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-red-500 hover:border-none focus:outline-none focus:ring active:text-blue-500"
+                      <Link to={`/updateinfo/${product._id}`}> 
+                    <button 
+                        className="inline-block shrink-0 rounded-md lg:w-[100%]  bg-red-400 px-6 py-3 text-sm font-medium text-white transition hover:bg-transparent hover:text-red-500 hover:border-none focus:outline-none focus:ring active:text-blue-500"
                         >
                         Update 
                     </button>
+                    </Link>
                     </div>
 
                  
