@@ -14,7 +14,8 @@ import BenzProducts from "../Pages/BenzProducts";
 import ProductsDetails from "../Pages/ProductsDetails";
 import UpdateProducts from "../Pages/UpdateProducts";
 import PrivateRoute from "../Pages/PrivateRoute";
-// import PrivateRoute2 from "../Pages/PrivateRoute2";
+import Error from "../Pages/Error";
+
 
 
 
@@ -23,6 +24,7 @@ const MyRoute = createBrowserRouter([
     {
         path:'/',
         element:<Root></Root>,
+        errorElement: <Error></Error>,
         children:[
             {
                 path:"/",
