@@ -1,5 +1,14 @@
 import { Link, useLoaderData } from "react-router-dom";
 
+import 'react-slideshow-image/dist/styles.css'
+import {  Slide } from 'react-slideshow-image';
+
+const object =[
+        {images:'https://i.ibb.co/XfnKzVL/side-1.jpg'},
+        {images:'https://i.ibb.co/n3Fdc8X/slider-2.jpg'},
+        {images:'https://i.ibb.co/fHy7CkN/slider-3.jpg'}
+]
+
 
 
 const ToyotaProducts = () => {
@@ -11,7 +20,19 @@ const ToyotaProducts = () => {
 
     
     return (
-        <div className=" px-4 lg:px-12 py-3 md:py-12">
+        <div className=" px-4 lg:px-12 py-3 md:py-12 ">
+            <div className="slide-container ">
+            <Slide >
+                {object.map((fadeImage, index) => (
+                <div key={index}>
+                    <img style={{ width: '100%' }} src={fadeImage.images} />
+                </div>
+                ))}
+            </Slide>
+          </div>
+
+
+
             
             {/* cards section  */}
 
@@ -20,9 +41,9 @@ const ToyotaProducts = () => {
           :
           <div className="md:grid md:grid-cols-3 gap-16">
             {
-                filterProducts.map((product, index )=>  <div key={index} >
+                filterProducts.map((product, index )=>  <div key={index} className=" pt-4 md:pt-9">
 
-                <a href="#" className="block rounded-lg p-4 shadow-md shadow-indigo-100">
+                <a href="#" className="block rounded-lg p-4 shadow-md shadow-indigo-100 ">
                 <img
                     alt="Home"
                     src={product.image}

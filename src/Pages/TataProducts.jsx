@@ -1,27 +1,52 @@
 import { Link, useLoaderData } from "react-router-dom";
+import 'react-slideshow-image/dist/styles.css'
+import {  Slide } from 'react-slideshow-image';
+
+const object =[
+        {images:'https://i.ibb.co/4RMPMLG/slider-1.jpg'},
+        {images:'https://i.ibb.co/n3Fdc8X/slider-2.jpg'},
+        {images:'https://i.ibb.co/fHy7CkN/slider-3.jpg'}
+]
+
+
 
 
 const TataProducts = () => {
 
     const loadedProducts = useLoaderData()
 
-
+  
+  
 
     const filterProducts = loadedProducts.filter(products => products.brand == "TATA" )
 
-
-  
+    
+   
 
 
     return (
         <div className=" px-4 lg:px-12 py-3 md:py-12">
+
+
+        <div className="slide-container ">
+            <Slide >
+                {object.map((fadeImage, index) => (
+                <div key={index}>
+                    <img style={{ width: '100%' }} src={fadeImage.images} />
+                </div>
+                ))}
+            </Slide>
+         </div>
+
+
+
             
             {/* cars section  */}
 
         {
           filterProducts.length==0 ?  <h4 className="text-center">No products available now</h4>
           :
-          <div className="md:grid md:grid-cols-3 gap-16">
+          <div className="md:grid md:grid-cols-3 gap-16 pt-4 md:pt-9">
             {
                 filterProducts.map((product, index )=>  <div key={index} >
 
