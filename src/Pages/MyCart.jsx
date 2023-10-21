@@ -58,18 +58,17 @@ const handleDelete =(id) =>{
 
 
     return (
-        <div>
+        <div className="">
             
           {
             loadedCarts.length == 0? <h2 className="py-5 md:py-12 text-center font-bold">No product add to card</h2>
-            :
-             <section >
+            :     <section >
             <div className="  max-w-screen-xl mx-auto px-8 py-8 sm:px-6 sm:py-12 lg:px-8">
                 <div className="mx-auto max-w-3xl">
                 <header className="text-center">
                     <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">Your Cart</h1>
                 </header>
-                <div className="flex items-center gap-9  border-b-2  md:pt-10 invisible md:visible"> 
+                <div className="lg:flex items-center gap-9  border-b-2  md:pt-10 hidden "> 
                     <h1 className="ml-14 pb-2">ITEM</h1>
                     <h1 className="ml-32">price</h1>
                     <h1 className="ml-20">quantity</h1>
@@ -186,6 +185,9 @@ const handleDelete =(id) =>{
                 </div>
             </div>
             </section>
+          
+        
+         
 
 
 

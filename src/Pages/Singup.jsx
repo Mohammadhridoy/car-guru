@@ -45,6 +45,8 @@ const Singup = () => {
             position:"bottom-right",
             autoClose:2000,
         })
+        
+
         updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
           }).then(() => {
@@ -52,14 +54,13 @@ const Singup = () => {
           }).catch((error) => {
            console.log(error.message)
           });
-
-
-        
+          
+          form.reset()  
 
       })
       .catch(error =>{
         console.log(error.message)
-        toast.error("!",{
+        toast.error("!opps something wrong",{
             position:"bottom-right",
             autoClose:2000,
         })
