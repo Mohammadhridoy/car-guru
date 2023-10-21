@@ -28,7 +28,7 @@ const handleDelete =(id) =>{
       }).then((result) => {
 
         if (result.isConfirmed) {
-        fetch(`http://localhost:5000/cart/${id}`,{
+        fetch(`https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/cart/${id}`,{
             method:"DELETE"
         })
         .then(res => res.json())

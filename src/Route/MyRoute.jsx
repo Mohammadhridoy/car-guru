@@ -45,48 +45,48 @@ const MyRoute = createBrowserRouter([
             {
                 path:"/cart",
                 element: <PrivateRoute>  <MyCart></MyCart> </PrivateRoute> ,
-                loader:() =>fetch("http://localhost:5000/cart")
+                loader:() =>fetch("https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/cart")
             },
             {
                 path:"/toyotaproducts",
                 element: <ToyotaProducts></ToyotaProducts>,
-                loader: ()=> fetch('http://localhost:5000/products')
+                loader: ()=> fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products')
             },
             
             {
                 path:"/teslaproducts",
                 element: <TeslaProducts></TeslaProducts>,
-                loader: ()=> fetch('http://localhost:5000/products')
+                loader: ()=> fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products')
             },
             {
                 path:"/tataproducts",
                 element: <TataProducts></TataProducts>,
-                loader:() => fetch('http://localhost:5000/products')
+                loader:() => fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products')
             },
             {
                 path:"/mazdaproducts",
                 element: <MazdaProducts></MazdaProducts>,
-                loader:() => fetch('http://localhost:5000/products')
+                loader:() => fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products')
             },
             {
                 path:"/kiaproducts",
                 element: <KiaProducts></KiaProducts>,
-                loader:() => fetch('http://localhost:5000/products')
+                loader:() => fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products')
             },
             {
                 path:"/benzproducts",
                 element: <BenzProducts></BenzProducts>,
-                loader:() => fetch('http://localhost:5000/products')
+                loader:() => fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products')
             },
             {
                 path:"/productsdetails/:id",
                 element: <PrivateRoute> <ProductsDetails></ProductsDetails> </PrivateRoute>,
-                loader:({params}) =>fetch(`http://localhost:5000/products/${params.id}`)
+                loader:({params}) =>fetch(`https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products/${params.id}`)
             },
             {
                 path:"/updateinfo/:id",
                 element: <PrivateRoute> <UpdateProducts> </UpdateProducts>    </PrivateRoute>  ,
-                loader:({params}) =>fetch(`http://localhost:5000/products/${params.id}`)
+                loader:({params}) =>fetch(`https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products/${params.id}`)
             }
 
         ]

@@ -24,7 +24,7 @@ const UpdateProducts = () => {
         const updatedProducts = {brand, type, name, image, price, description, rating}
         console.log(updatedProducts)
 
-        fetch(`http://localhost:5000/products/${_id}`, {
+        fetch(`https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products/${_id}`, {
             method:"PUT",
             headers:{
               'content-type':'application/json'

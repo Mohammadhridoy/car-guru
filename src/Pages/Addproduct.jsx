@@ -20,7 +20,7 @@ const Addproduct = () => {
         const products = {brand, type, name, image, price, description, rating}
         console.log(products)
 
-        fetch('http://localhost:5000/products', {
+        fetch('https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/products', {
             method:"POST",
             headers:{
               'content-type':'application/json'

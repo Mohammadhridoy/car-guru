@@ -21,7 +21,7 @@ const ProductsDetails = () => {
         image, name, price, rating, brand, type
     }
 
-    fetch(`http://localhost:5000/cart`, {
+    fetch(`https://carguru-server-site-5tio91ia1-mohammadhridoy.vercel.app/cart`, {
         method:"POST",
         headers:{
           'content-type':'application/json'
